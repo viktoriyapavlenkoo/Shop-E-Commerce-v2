@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniro</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+</head>
+<body>
+    <div class="body">
+        <header class="header">
+            <div class="container">
+                <div class="header__content">
+                    <a href="/" class="logo header__logo">
+                        <img src="./images/logo-img.svg" alt="Logo" class="logo__img" width="50" height="32">
+                        <p class="logo__text">Furniro</p>
+                    </a>
+                    <nav class="nav">
+                        <ul class="menu">
+                            <li class="menu__item"><a href="/" class="menu__link">Home</a></li>
+                            <li class="menu__item"><a href="/shop" class="menu__link">Shop</a></li>
+                            <li class="menu__item"><a href="#" class="menu__link">About</a></li>
+                            <li class="menu__item"><a href="#" class="menu__link">Contact</a></li>
+                        </ul>
+                        <ul class="btn__list">
+                            <ul class="btn__item">
+                                <button class="btn btn__account">
+                                    <img src="./images/account-icon.svg" alt="Account icon">
+                                </button>
+                            </ul>
+                            <ul class="btn__item">
+                                <button class="btn btn__search">
+                                    <img src="./images/search-icon.svg" alt="Search icon" >
+                                </button>
+                            </ul>
+                            <ul class="btn__item">
+                                <button class="btn btn__heart">
+                                    <img src="./images/heart-icon.svg" alt="Heart icon">
+                                </button>
+                            </ul>
+                            <ul class="btn__item">
+                                <button class="btn btn__cart">
+                                    <img src="./images/cart-icon.svg" alt="Cart icon">
+                                </button>
+                            </ul>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+            <section class="page-hero">
+                <div class="container">
+                    <div class="page-hero__content">
+                        <h1 class="title  page-hero__title">Shop</h1>
+                        <div class="page-hero__path">
+                            <a href="/" class="page-hero__link">Home</a>
+                            <p class="page-hero__text">Shop</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="shop-products">
+                <div class="shop-products__header">
+                    <div class="container">
+                        <div class="shop-products__header-content">
+                            <div class="filter-show__block">
+                                <div class="filter__block">
+                                    <button class="btn filter__btn">
+                                        <img src="./images/shop/filter-icon.svg" alt="">
+                                    </button>
+                                    <p class="filter__text">Filter</p>
+                                </div>
+                                <p class="show__text"></p>
+                            </div>
+                            <form action="" method="get" class="form show__form">
+                                <!-- <label for="size" class="show__label">Show</label>
+                                <select name="size" id="size" class="show__select">
+                                    <option value="16" selected class="show__option">16</option>
+                                    <option value="32" class="show__option">32</option>
+                                    <option value="64" class="show__option">64</option>
+                                </select> -->
+                                <label for="sort" class="sort__label">Sort by</label>
+                                <select name="sort" id="sort" class="sort__select">
+                                    <option value="default"  class="sort__option">default</option>
+                                    <option value="name A-Z" class="sort__option">name A-Z</option>
+                                    <option value="name Z-A" class="sort__option">name Z-A</option>
+                                    <option value="price ASC" class="sort__option">price ASC</option>
+                                    <option value="price DESC" class="sort__option">price DESC</option>
+                                </select>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="shop-products__content">
+                    <div class="container">
+                        <div class="shop-products__buttons-block">
+                            <!-- <button class="shop-products__btn shop-products__btn_active">1</button>
+                            <button class="shop-products__btn">2</button>
+                            <button class="shop-products__btn">3</button>
+                            <button class="shop-products__btn shop-products__btn-next">Next</button> -->
+                        </div>
+                    </div>     
+                </div>
+            </section>
+            <section class="benefits">
+                <div class="container">
+                    <div class="benefits__content">
+                        <ul class="benefits__list">
+                            <li class="benefits__item">
+                                <div class="benefits__img-block">
+                                    <img src="./images/shop/benefits-trophy-icon .svg" alt="">
+                                </div>
+                                <div class="benefits__text-block">
+                                    <h3 class="benefits__item-title">High Quality</h3>
+                                    <p class="benefits__item-text">crafted from top materials</p>
+                                </div>
+                            </li>
+                            <li class="benefits__item">
+                                <div class="benefits__img-block">
+                                    <img src="./images/shop/benefits-guarantee-icon.svg" alt="">
+                                </div>
+                                <div class="benefits__text-block">
+                                    <h3 class="benefits__item-title">Warranty Protection</h3>
+                                    <p class="benefits__item-text">Over 2 years</p>
+                                </div>
+                            </li>
+                            <li class="benefits__item">
+                                <div class="benefits__img-block">
+                                    <img src="./images/shop/benefits-shipping-icon.svg" alt="">
+                                </div>
+                                <div class="benefits__text-block">
+                                    <h3 class="benefits__item-title">Free Shipping</h3>
+                                    <p class="benefits__item-text">Order over 150 $</p>
+                                </div>
+                            </li>
+                            <li class="benefits__item">
+                                <div class="benefits__img-block">
+                                    <img src="./images/shop/benefits-support-icon.svg" alt="">
+                                </div>
+                                <div class="benefits__text-block">
+                                    <h3 class="benefits__item-title">24 / 7 Support</h3>
+                                    <p class="benefits__item-text">Dedicated support</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__content">
+                    <div class="footer__blocks">
+                        <div class="footer__block footer__first-block">
+                            <a href="/" class="logo footer__logo">Funiro.</a>
+                            <address class="address">400 University Drive Suite 200 Coral Gables,<br> FL 33134 USA</address>
+                        </div>
+                        <div class="footer__block footer__second-block">
+                            <h3 class="footer__title">Links</h3>
+                            <ul class="menu footer__menu">
+                                <li class="menu__item"><a href="/" class="menu__link">Home</a></li>
+                                <li class="menu__item"><a href="/shop" class="menu__link">Shop</a></li>
+                                <li class="menu__item"><a href="#" class="menu__link">About</a></li>
+                                <li class="menu__item"><a href="#" class="menu__link">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer__block footer__third-block">
+                            <h3 class="footer__title">Help</h3>
+                            <ul class="help footer__help">
+                                <li class="help__item"><a href="" class="help__link">Payment Options</a></li>
+                                <li class="help__item"><a href="" class="help__link">Returns</a></li>
+                                <li class="help__item"><a href="" class="help__link">Privacy Policies</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer__block footer__forth-block">
+                            <h3 class="footer__title">Newsletter</h3>
+                             <form action="" method="post" class="form footer__form">
+                                <input type="email" name="email" placeholder="Enter Your Email Address" class="input footer__input">
+                                <button type="submit" class="btn footer__btn">Subscribe</button>
+                            </form> 
+                        </div>
+                    </div>
+                    <p class="text footer__text">2023 furino. All rights reverved</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <div class="cart">
+        <div class="cart__header">
+            <h2 class="cart__title">Shopping Cart</h2>
+            <button class="cart__close">
+                <img src="../images/cart/cart-close-image.svg" alt="">
+            </button>
+        </div>
+        <div class="cart__body">
+            <ul class="cart__products-list">
+                <li class="cart__products-item">
+                    <div class="cart__item-img">
+                        <img src="../images/cart/cart-products-image-1.png" alt="">
+                    </div>
+                    <div class="cart__item-text">
+                        <h3 class="cart__item-title">Asgaard sofa</h3>
+                        <div class="cart__item-price-block">
+                            <p class="cart__item-count">1</p>
+                            <p class="cart__item-mul">X</p>
+                            <p class="cart__item-price">Rs. 250,000.00</p>
+                        </div>
+                    </div>
+                    <button class="cart__item-close">
+                        <img src="../images/cart/item-close-image.svg" alt="">
+                    </button>
+                </li>
+                <li class="cart__products-item">
+                    <div class="cart__item-img">
+                        <img src="../images/cart/cart-products-image-2.png" alt="">
+                    </div>
+                    <div class="cart__item-text">
+                        <h3 class="cart__item-title">Casaliving Wood</h3>
+                        <div class="cart__item-price-block">
+                            <p class="cart__item-count">1</p>
+                            <p class="cart__item-mul">X</p>
+                            <p class="cart__item-price">Rs. 270,000.00</p>
+                        </div>
+                    </div>
+                    <button class="cart__item-close">
+                        <img src="../images/cart/item-close-image.svg" alt="">
+                    </button>
+                </li>
+            </ul>
+            <div class="cart__total-price">
+                <h3 class="total-price__title">Subtotal</h3>
+                <p class="total-price__sum">Rs. 520,000.00</p>
+            </div>
+        </div>
+        <div class="cart__footer">
+            <div class="cart__buttons">
+                <button class="btn cart__btn btn-cart">Cart</button>
+                <button class="btn cart__btn btn-checkout">Checkout</button>
+                <button class="btn cart__btn btn-comparison">Comparison</button>
+            </div>
+        </div>
+    </div>
+    <script src="../js/cart.js"></script>
+</body>
+</html>

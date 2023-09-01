@@ -172,6 +172,7 @@ body {
 }
 
 .hero__btn {
+    display: inline-block;
     padding: 25px 72px;
     background-color: var(--accent-color);
     text-transform: uppercase;
@@ -245,12 +246,14 @@ body {
     margin: 50px 0 63px;
 }
 
-.products__list {
+.product__list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin: 0 -16px;
 }
+
+
 
 .products__item {
     position: relative;
@@ -300,7 +303,12 @@ body {
 
 .products__btn {
     display: block;
-    padding: 12px 78px;
+    text-align: center;
+    max-width: 245px;
+    width: 100%;
+    /* padding: 12px 78px; */
+    
+    padding: 12px 0;
     border: 1px solid var(--accent-color);
     font-weight: 600;
     line-height: 1.5;
@@ -951,7 +959,7 @@ body {
     color: var(--header-footer-color-text);
     background-color: var(--first-background-color);
     font-weight: 400;
-    box-shadow: #000000;
+    box-shadow: 10px 10px 65px -19px rgba(0,0,0,0.75);
 }
 .cart__header {
     display: flex;

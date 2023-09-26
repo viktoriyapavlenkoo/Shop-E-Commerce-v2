@@ -82,6 +82,7 @@ class UI {
     updateDisplay(products) {
         productList.innerHTML = '';
         this.displayProduct(products);
+        location.reload();
     }
 
     addToCart() {
@@ -99,7 +100,6 @@ class UI {
         let countPages = countProducts / size;
 
         currentPage = !currentPage ? page : currentPage;
-        console.log("currentPage " + currentPage)
         const product = new Product();
 
         buttonsBlock = document.createElement("div");
@@ -115,12 +115,12 @@ class UI {
             buttonsBlock.append(button);
             let id = button.dataset.id;
             button.addEventListener("click", () => {
-                
+                location.reload();
+
                 if (page !== id) {
                     product.getProducts(id, size).then((prod) => this.updateDisplay(prod))
                 }
                 currentPage = id;
-                console.log("currentPage: " + currentPage)
                 
                 if(!buttonPrev) {
                     this.getPrevButton(currentPage);
@@ -135,22 +135,48 @@ class UI {
                     buttonNext.remove();
                     buttonNext = undefined;
                 }
+
                 CustomStotage.saveCurrentPage(currentPage)
+
                 
             })
+            
         }
+
+        
+
         productList.after(buttonsBlock)
         this.getNextButton(currentPage, countPages);
         this.getPrevButton(currentPage);
-        // CustomStotage.saveCurrentPage(currentPage)
-        // CustomStotage.getCurrentPage();
+
+        if (buttonPrev) {
+            buttonPrev.addEventListener("click", () => {
+                currentPage = --currentPage;
+                product.getProducts(currentPage, size).then((prod) => this.updateDisplay(prod));
+                CustomStotage.saveCurrentPage(currentPage);
+            } )
+        }
+        
+
+        if(buttonNext) {
+            buttonNext.addEventListener("click", () => {
+                currentPage = ++currentPage;
+                product.getProducts(currentPage, size).then((prod) => this.updateDisplay(prod));
+                CustomStotage.saveCurrentPage(currentPage);
+            } )
+        }
+
         currentPage = CustomStotage.getCurrentPage()
         
+        let btns = document.querySelectorAll(".shop-products__btn");
         
-        console.log(currentPage)
-
-
-        // this.getPrevButton(currentPage);
+        btns = Array.from(btns);
+        btns.map(btn => {
+            if(btn.dataset.id === currentPage) {
+            btn.style.background = 'var(--accent-color)';
+            btn.style.color = 'var(--first-background-color)';
+            }
+        })
     }
     getPrevButton(currentPage) {
         if(currentPage > 1) {
@@ -158,6 +184,8 @@ class UI {
             buttonPrev.classList.add("shop-products__btn", "shop-products__btn-prev");
             buttonPrev.textContent = "Prev";
             buttonsBlock.prepend(buttonPrev)
+            
+
         }
     }
     getNextButton(currentPage, countPages) {

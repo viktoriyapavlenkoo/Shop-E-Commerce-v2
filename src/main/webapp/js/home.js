@@ -26,8 +26,8 @@
 
 document.addEventListener("DOMContentLoaded", () => {
     
-    const products = new Product();
+    const product = new Product();
     const ui = new UI;
 
-    products.getProducts().then(prod => ui.displayProduct(prod))
+    product.getProducts().then(prod => ui.displayProduct(prod))
 })    

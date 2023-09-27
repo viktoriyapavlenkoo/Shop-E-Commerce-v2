@@ -7,6 +7,7 @@ const btnCart = document.querySelector(".btn__cart");
 const cart = document.querySelector(".cart");
 const cartClose = document.querySelector(".cart__close");
 
+let cartList;
 let countProducts;
 let buttonsBlock;
 let buttonPrev;
@@ -15,8 +16,16 @@ let buttonNext;
 let Cart = [];
 let buttons = [];
 
+
+let cartArray;
 btnCart.addEventListener("click", () => {
     cart.style.display = "block";
+    
+    // let cartArray = CustomStotage.getCart();
+    // console.log(cartArray)
+
+    // cartList = document.querySelector(".cart__products-list");
+    // console.log(cartList);
 })
 
 cartClose.addEventListener("click", () => {
@@ -84,17 +93,18 @@ class UI {
             btns[i].addEventListener("click",() => {
                 this.addToCart(item)
             })
-        }
+            
+        } 
+        let storageCart = CustomStotage.getCart();
+        Cart = storageCart ? storageCart : Cart;
+        console.log(Cart) 
+        
+        
+        cartList = document.querySelector(".cart__products-list");
+        //console.log(cartList)
+        // let storageCartList = CustomStotage.getCartList();
+        // cartList = storageCartList ? storageCartList : cartList;
 
-        // const productBtns = document.querySelectorAll(".products__hover-btn");
-        // Array.from(productBtns);
-        // productBtns.forEach((btn) => {
-        //     let id = btn.dataset.id;
-        //     //console.log(id)
-        //     btn.addEventListener("click", () => {
-        //         this.addToCart(product)
-        //     })
-        // });    
         this.setSort();
     }
 
@@ -105,8 +115,39 @@ class UI {
     }
 
     addToCart(product) {
+        let inCart = Cart.find(item => product.id === item.id);
+        if (!inCart) {
+            Cart.push(product);
+            console.log(Cart)
+            
+            cartList = document.querySelector(".cart__products-list");
+            console.log(cartList)
+            let cartItem = document.createElement("div");
+            cartItem.classList.add("cart__products-item");
+            cartItem.innerHTML = `<div class="cart__item-img">
+                                        <img src="./images/products/${product.image}" alt=""  width="105" height="105">
+                                    </div>
+                                    <div class="cart__item-text">
+                                        <h3 class="cart__item-title">${product.title}</h3>
+                                        <div class="cart__item-price-block">
+                                            <p class="cart__item-count">1</p>
+                                            <p class="cart__item-mul">X</p>
+                                            <p class="cart__item-price">${product.price}</p>
+                                        </div>
+                                    </div>
+                                    <button class="cart__item-close">
+                                        <img src="../images/cart/item-close-image.svg" alt="">
+                                    </button>`
+            cartList.append(cartItem);
+            CustomStotage.saveCart(Cart);
+            
+
+
+        
+        // let storageCart = CustomStotage.getCart();
+        // console.log(storageCart)
+
         //let storageCart;
-        console.log("Add to cart")
         //console.log('click: ' + id)
 
         // const productBtns = document.querySelectorAll(".products__hover-btn");
@@ -138,10 +179,17 @@ class UI {
         // // Cart = storageCart ? storageCart : Cart;
         // // //console.log(Cart)
         
+        }
     }
-    
 
-    
+    // uiCart(cartArray) {
+    //     console.log(cartArray)
+    //     if (cartArray) {
+    //         cartArray.forEach(element => {
+    //             this.addToCart(element); 
+    //         });
+    //     }
+    // }    
 
     getButtonsOnShopPage(currentPage) {
 
@@ -281,8 +329,19 @@ class CustomStotage {
     }
     static getCart() {
         return localStorage.getItem("Cart") 
-        //? JSON.parse(localStorage.getItem("Cart")):[];
+        ? JSON.parse(localStorage.getItem("Cart")):[];
     }
+    static clearCart(cart) {
+        localStorage.clear("Cart");
+    }
+
+    static saveCartList(cartList) {
+        localStorage.setItem("cartList", cartList);
+    }
+    static getCartList() {
+        return localStorage.getItem("cartList");
+    }
+
     static saveCurrentPage(currentPage) {
         localStorage.setItem("currentPage", currentPage);
     }

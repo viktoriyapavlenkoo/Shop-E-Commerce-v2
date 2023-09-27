@@ -26,9 +26,13 @@ cartClose.addEventListener("click", () => {
 
 class Product {
     async getProducts(page = 1, size = 8) {
+        
+        let sort = CustomStotage.getSortById();
+                
         let response = await fetch(shopListEndpoint + "?" + new URLSearchParams({
             page: page,
-            size: size
+            size: size,
+            sort: sort
         }));
         let jsonResponse = await response.json();
 
@@ -48,8 +52,8 @@ class Product {
 
 class UI {
     displayProduct(products) {
-        products.forEach((item) => {
-
+        for (let i = 0; i < products.length; i++) {
+            let item = products[i];
             let productItem = document.createElement("div");
             productItem.classList.add("products__item")
             productItem.innerHTML = `<div class="products__img-block">
@@ -76,7 +80,22 @@ class UI {
                                     </div>`;
 
             productList.append(productItem);
-        })
+            let btns = document.querySelectorAll(".products__hover-btn");
+            btns[i].addEventListener("click",() => {
+                this.addToCart(item)
+            })
+        }
+
+        // const productBtns = document.querySelectorAll(".products__hover-btn");
+        // Array.from(productBtns);
+        // productBtns.forEach((btn) => {
+        //     let id = btn.dataset.id;
+        //     //console.log(id)
+        //     btn.addEventListener("click", () => {
+        //         this.addToCart(product)
+        //     })
+        // });    
+        this.setSort();
     }
 
     updateDisplay(products) {
@@ -85,14 +104,43 @@ class UI {
         location.reload();
     }
 
-    addToCart() {
-        const productBtns = document.querySelectorAll(".products__hover-btn");
-        Array.from(productBtns);
-        productBtns.forEach((btn) => {
-            let id = btn.dataset.id;
-            // console.log(id)
-        })
+    addToCart(product) {
+        //let storageCart;
+        console.log("Add to cart")
+        //console.log('click: ' + id)
+
+        // const productBtns = document.querySelectorAll(".products__hover-btn");
+        // Array.from(productBtns);
+        // productBtns.forEach((btn) => {
+        //     let id = btn.dataset.id;
+        //     //console.log(id)
+            
+        //     btn.addEventListener("click", (event) => {
+        //         console.log('click: ' + id)
+
+        //         console.log(event.target.parentElement.parentElement)
+        //         //Cart.push(btn);
+        //         //console.log(Cart)
+                
+        //         //CustomStotage.saveCart(Cart)
+                
+        //         //storageCart = CustomStotage.getCart();
+
+        //         //Cart = storageCart ? storageCart : Cart;
+                
+        //         // storageCart = CustomStotage.getCart()
+        //         //console.log(storageCart)
+        //     })
+        // })
+        // //console.log(storageCart)
+        
+        // // storageCart = CustomStotage.getCart();
+        // // Cart = storageCart ? storageCart : Cart;
+        // // //console.log(Cart)
+        
     }
+    
+
     
 
     getButtonsOnShopPage(currentPage) {
@@ -196,6 +244,28 @@ class UI {
             buttonsBlock.append(buttonNext)
         }
     }
+
+    setSort() {
+        let sort = document.querySelector('select');
+        let sortValue = sort.value;
+
+        let sortId;
+        sort.addEventListener("change", (event) => {
+            sortValue = event.target.value;
+            CustomStotage.saveSortBy(sortValue)
+
+            let sortOptions = document.querySelectorAll(".sort__option");
+            sortOptions = Array.from(sortOptions);
+            sortOptions.map(item => {
+                if (sort.value === item.value) {
+                    sortId = item.dataset.id;
+                }
+            })
+            CustomStotage.saveSortById(sortId);
+        })
+        let storageSort = CustomStotage.getSortBy();
+        sort.value = storageSort ? storageSort : sortValue;
+    }
 }
 
 class CustomStotage {
@@ -206,11 +276,12 @@ class CustomStotage {
         let products = JSON.parse(localStorage.getItem("products"));
         return products.find((item) => item.id === id);
     }
-    static saveCart(Cart) {
-        localStorage.setItem("Cart", JSON.stringify(Cart));
+    static saveCart(cart) {
+        localStorage.setItem("Cart", JSON.stringify(cart));
     }
     static getCart() {
-        return localStorage.getItem("Cart") ? JSON.parse(localStorage.getItem("Cart")):[];
+        return localStorage.getItem("Cart") 
+        //? JSON.parse(localStorage.getItem("Cart")):[];
     }
     static saveCurrentPage(currentPage) {
         localStorage.setItem("currentPage", currentPage);
@@ -223,5 +294,11 @@ class CustomStotage {
     }
     static getSortBy() {
         return localStorage.getItem("sortBy");
+    }
+    static saveSortById(sortId) {
+        localStorage.setItem("sortById", sortId);
+    }
+    static getSortById() {
+        return localStorage.getItem("sortById");
     }
 }

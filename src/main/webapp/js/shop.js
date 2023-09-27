@@ -9,5 +9,4 @@ document.addEventListener("DOMContentLoaded", () => {
     product.getProducts(currentPage, size)
         .then(prod => ui.displayProduct(prod))
         .then(() => ui.getButtonsOnShopPage(currentPage))
-    
 })

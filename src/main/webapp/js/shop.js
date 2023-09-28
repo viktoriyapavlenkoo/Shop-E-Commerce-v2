@@ -11,12 +11,15 @@ document.addEventListener("DOMContentLoaded", () => {
     if (cartArray.length > 0) {
         cartArray.forEach(element => {
             ui.addToCart(element); 
+            // ui.removeFromCart(cartArray)
         });
     }
+    ui.removeFromCart(cartArray)
     let currentPage = storagePage ? storagePage : page;
     product.getProducts(currentPage, size)
-        .then(prod => ui.displayProduct(prod))
-        .then(() => ui.getButtonsOnShopPage(currentPage))
+        .then(prod => ui.displayProduct(prod)).then(() => ui.setSort()).then(() => ui.getButtonsOnShopPage(currentPage))
+        
+        // .then(() => ui.removeFromCart(cartArray))
         
         // .then(() => ui.uiCart(cartArray))
     

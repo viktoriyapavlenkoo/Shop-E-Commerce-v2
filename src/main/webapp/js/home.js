@@ -14,5 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
             ui.addToCart(element); 
         });
     }
+    ui.removeFromCart(cartArray)
     product.getProducts().then(prod => ui.displayProduct(prod))
+    
+    //.then(() => ui.removeFromCart(cartArray))
 })    

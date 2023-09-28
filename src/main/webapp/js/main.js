@@ -97,7 +97,7 @@ class UI {
         } 
         let storageCart = CustomStotage.getCart();
         Cart = storageCart ? storageCart : Cart;
-        console.log(Cart) 
+        //console.log(Cart) 
         
         
         cartList = document.querySelector(".cart__products-list");
@@ -105,7 +105,7 @@ class UI {
         // let storageCartList = CustomStotage.getCartList();
         // cartList = storageCartList ? storageCartList : cartList;
 
-        this.setSort();
+        //this.setSort();
     }
 
     updateDisplay(products) {
@@ -118,7 +118,7 @@ class UI {
         let inCart = Cart.find(item => product.id === item.id);
         if (!inCart) {
             Cart.push(product);
-            console.log(Cart)
+            //console.log(Cart)
             
             cartList = document.querySelector(".cart__products-list");
             //console.log(cartList)
@@ -143,9 +143,45 @@ class UI {
         }
     }
     
-    removeFromCart() {
+    removeFromCart(Cart) {
+        console.log(Cart);
+        if(Cart.length > 0) {
+            let cartItems = document.querySelectorAll(".cart__products-item");
+            cartItems = Array.from(cartItems) ;
+            console.log(cartItems);
+            let closeBtns = document.querySelectorAll(".cart__item-close");
+
+            closeBtns = Array.from(closeBtns);
+            //console.log(closeBtns);
+            for(let i = 0; i < Cart.length; i++) {
+                //console.log(Cart[i])
+                closeBtns[i].addEventListener("click", () => {
+
+                    // console.log("click: delete " + Cart[i].id);
+                    cartItems[i].innerHTML = "";
+                    let d = Cart.splice(1, i);
+                    console.log("Delete...")
+                    console.log(Cart)
+                    CustomStotage.saveCart(Cart)
+                })
+                
+            }
+        }
+        // let arr = [1, 2, 3, 4];
+        // console.log(arr)
+        // // arr.splice(1, 1)
+        // // console.log(arr)
+
+        // for (let i = 0; i < arr.length; i++) {
+        //     console.log(arr[i]);
+
+        // }
         
     }
+
+
+
+
 
     getButtonsOnShopPage(currentPage) {
 

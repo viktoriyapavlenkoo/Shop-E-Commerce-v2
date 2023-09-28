@@ -967,7 +967,6 @@ body {
     position: relative;
     justify-content: space-between;
     align-items: center;
-    padding-right: 10px;
 }
 .cart__title {
     font-size: var(--item-title);
@@ -993,11 +992,9 @@ body {
     justify-content: space-between;
     height: 530px;
     margin-top: 42px;
-
-    padding-right: 10px;
 }
 .cart__products-list {
-    overflow: scroll;
+    overflow-y: scroll;
 }
 .cart__products-item {
     display: flex;
@@ -1041,12 +1038,13 @@ body {
     color: var(--accent-color);
 }
 .cart__item-close {
+    margin-right: 20px;
     justify-self: flex-end;
 }
 .cart__total-price {
     display: flex;
     justify-content: space-between;
-    padding: 0 60px 23px 0;
+    padding:  23px 60px 0 0;
     align-items: center;
     border-bottom: 1px solid var(--footer-color-text);
 }

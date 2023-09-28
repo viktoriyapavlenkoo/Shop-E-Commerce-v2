@@ -121,7 +121,7 @@ class UI {
             console.log(Cart)
             
             cartList = document.querySelector(".cart__products-list");
-            console.log(cartList)
+            //console.log(cartList)
             let cartItem = document.createElement("div");
             cartItem.classList.add("cart__products-item");
             cartItem.innerHTML = `<div class="cart__item-img">
@@ -139,57 +139,13 @@ class UI {
                                         <img src="../images/cart/item-close-image.svg" alt="">
                                     </button>`
             cartList.append(cartItem);
-            CustomStotage.saveCart(Cart);
-            
-
-
-        
-        // let storageCart = CustomStotage.getCart();
-        // console.log(storageCart)
-
-        //let storageCart;
-        //console.log('click: ' + id)
-
-        // const productBtns = document.querySelectorAll(".products__hover-btn");
-        // Array.from(productBtns);
-        // productBtns.forEach((btn) => {
-        //     let id = btn.dataset.id;
-        //     //console.log(id)
-            
-        //     btn.addEventListener("click", (event) => {
-        //         console.log('click: ' + id)
-
-        //         console.log(event.target.parentElement.parentElement)
-        //         //Cart.push(btn);
-        //         //console.log(Cart)
-                
-        //         //CustomStotage.saveCart(Cart)
-                
-        //         //storageCart = CustomStotage.getCart();
-
-        //         //Cart = storageCart ? storageCart : Cart;
-                
-        //         // storageCart = CustomStotage.getCart()
-        //         //console.log(storageCart)
-        //     })
-        // })
-        // //console.log(storageCart)
-        
-        // // storageCart = CustomStotage.getCart();
-        // // Cart = storageCart ? storageCart : Cart;
-        // // //console.log(Cart)
-        
+            CustomStotage.saveCart(Cart);       
         }
     }
-
-    // uiCart(cartArray) {
-    //     console.log(cartArray)
-    //     if (cartArray) {
-    //         cartArray.forEach(element => {
-    //             this.addToCart(element); 
-    //         });
-    //     }
-    // }    
+    
+    removeFromCart() {
+        
+    }
 
     getButtonsOnShopPage(currentPage) {
 

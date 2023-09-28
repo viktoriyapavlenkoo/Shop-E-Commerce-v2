@@ -5,9 +5,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const product = new Product();
     const ui = new UI;
     let storagePage = CustomStotage.getCurrentPage();
-    CustomStotage.clearCart();
+    //CustomStotage.clearCart();
     // let cartArray = CustomStotage.getCart();
-    
+    let cartArray = CustomStotage.getCart();
+    if (cartArray.length > 0) {
+        cartArray.forEach(element => {
+            ui.addToCart(element); 
+        });
+    }
     let currentPage = storagePage ? storagePage : page;
     product.getProducts(currentPage, size)
         .then(prod => ui.displayProduct(prod))

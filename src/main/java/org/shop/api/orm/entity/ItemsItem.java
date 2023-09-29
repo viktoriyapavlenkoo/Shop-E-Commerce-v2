@@ -36,7 +36,7 @@ public class ItemsItem implements Serializable {
     private String description;
 
     @Column(nullable = false)
-    private Double price;
+    private String price;
 
     @Column(name = "currency_enum", nullable = false)
     @Enumerated(value = EnumType.STRING)

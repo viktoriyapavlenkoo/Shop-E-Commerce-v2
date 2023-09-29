@@ -13,6 +13,7 @@ let buttonsBlock;
 let buttonPrev;
 let buttonNext;
 
+
 let Cart = [];
 let buttons = [];
 
@@ -20,12 +21,8 @@ let buttons = [];
 let cartArray;
 btnCart.addEventListener("click", () => {
     cart.style.display = "block";
-    
-    // let cartArray = CustomStotage.getCart();
-    // console.log(cartArray)
-
-    // cartList = document.querySelector(".cart__products-list");
-    // console.log(cartList);
+   let uiCart = new UICart();
+   uiCart.getTotalSum()
 })
 
 cartClose.addEventListener("click", () => {
@@ -52,8 +49,9 @@ class Product {
             const image = item.imageUrl;
             const title = item.name;
             const price = item.price;
+            const currency = item.currency; 
             const text = item.description;
-            return {id, image, title, price, text};
+            return {id, image, title, price, currency, text};
         })
         return products;       
     }
@@ -61,6 +59,7 @@ class Product {
 
 class UI {
     displayProduct(products) {
+        console.log(products)
         for (let i = 0; i < products.length; i++) {
             let item = products[i];
             let productItem = document.createElement("div");
@@ -71,7 +70,7 @@ class UI {
                                     <div class="products__text-block">
                                         <a href="#" class="products__item-title">${item.title}</a>
                                         <p class="products__item-description">${item.text}</p>
-                                        <p class="products__item-price">${item.price}</p>
+                                        <p class="products__item-price">${item.price} ${item.currency}</p>
                                     </div>
                                     <div class="products__item-hover">
                                         <button class="btn products__hover-btn" data-id="${item.id}">Add to cart</button>
@@ -90,22 +89,14 @@ class UI {
 
             productList.append(productItem);
             let btns = document.querySelectorAll(".products__hover-btn");
+          
             const uiCart = new UICart()
             btns[i].addEventListener("click",() => {
+                console.log(item)
                 uiCart.addToCart(item)
             })
             
         } 
-        
-        //console.log(Cart) 
-        
-        
-        cartList = document.querySelector(".cart__products-list");
-        //console.log(cartList)
-        // let storageCartList = CustomStotage.getCartList();
-        // cartList = storageCartList ? storageCartList : cartList;
-
-        //this.setSort();
     }
 
     updateDisplay(products) {
@@ -113,13 +104,6 @@ class UI {
         this.displayProduct(products);
         location.reload();
     }
-
-   
-    
-
-
-
-
 
     getButtonsOnShopPage(currentPage) {
 
@@ -245,25 +229,16 @@ class UI {
         sort.value = storageSort ? storageSort : sortValue;
     }
 
-
-
-
-    randomMethod() {
-        console.log("check")
-    }
-
 }
 
 
 class UICart extends UI {
     addToCart(product) {
+        console.log(product)
         let inCart = Cart.find(item => product.id === item.id);
         if (!inCart) {
-            Cart.push(product);
-            //console.log(Cart)
-            
+            Cart.push(product);            
             cartList = document.querySelector(".cart__products-list");
-            //console.log(cartList)
             let cartItem = document.createElement("div");
             cartItem.classList.add("cart__products-item");
             cartItem.innerHTML = `<div class="cart__item-img">
@@ -274,7 +249,7 @@ class UICart extends UI {
                                         <div class="cart__item-price-block">
                                             <p class="cart__item-count">1</p>
                                             <p class="cart__item-mul">X</p>
-                                            <p class="cart__item-price">${product.price}</p>
+                                            <p class="cart__item-price">${product.price} ${product.currency}</p>
                                         </div>
                                     </div>
                                     <button class="cart__item-close">
@@ -291,6 +266,8 @@ class UICart extends UI {
                     CustomStotage.saveCart(Cart);   
                 }
             })
+
+            //this.getTotalSum()
             let storageCart = CustomStotage.getCart();
             Cart = storageCart ? storageCart : Cart;   
         }
@@ -298,44 +275,30 @@ class UICart extends UI {
     
     removeFromCart(Cart, id) {
         let item = event.target.parentElement.parentElement; 
-        let targetItem = Cart.find(item => item.id == id)
-        let index = Cart.indexOf(targetItem)
-        Cart.splice(index, 1)
+        let targetItem = Cart.find(item => item.id == id);
+        let index = Cart.indexOf(targetItem);
+        Cart.splice(index, 1);
         cartList.removeChild(item);
         console.log(Cart)
-       
+    }
 
-            
-            // let cartItems = document.querySelectorAll(".cart__products-item");
-            // cartItems = Array.from(cartItems) ;
-            // console.log(cartItems);
-            // let closeBtns = document.querySelectorAll(".cart__item-close");
-
-            // closeBtns = Array.from(closeBtns);
-            // console.log(closeBtns);
-            // for(let i = 0; i < Cart.length; i++) {
-            //     console.log(closeBtns[i])
-            //     closeBtns[i].addEventListener("click", () => {
-
-            //     console.log("click: delete " + Cart[i].id);
-            //         cartItems[i].innerHTML = "";
-            //         let d = Cart.splice(1, i);
-            //         CustomStotage.saveCart(Cart);
-            //         console.log(Cart)
-            //     })
+    getTotalSum() {
+        let totalSum = document.querySelector(".total-price__sum");
+        console.log(totalSum);
+        let sum = 0;
+        console.log(Cart);
+        if(Cart.length > 0) {
+            for(let i = 0; i < Cart.length; i++) {
                 
-            // }
+                console.log(Cart[i].price)
+            }
         }
-        // let arr = [1, 2, 3, 4];
-        // console.log(arr)
-        // // arr.splice(1, 1)
-        // // console.log(arr)
-
-        // for (let i = 0; i < arr.length; i++) {
-        //     console.log(arr[i]);
-
-        // }
         
+
+
+
+        
+    }
 }
 
 
@@ -358,13 +321,6 @@ class CustomStotage {
     }
     static clearCart(cart) {
         localStorage.clear("Cart");
-    }
-
-    static saveCartList(cartList) {
-        localStorage.setItem("cartList", cartList);
-    }
-    static getCartList() {
-        return localStorage.getItem("cartList");
     }
 
     static saveCurrentPage(currentPage) {

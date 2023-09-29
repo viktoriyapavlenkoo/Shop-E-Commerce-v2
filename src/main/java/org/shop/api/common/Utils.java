@@ -13,8 +13,9 @@ public class Utils {
         productDTO.setName(itemsItem.getName());
         productDTO.setImageUrl(itemsItem.getImageUrl());
         productDTO.setDescription(itemsItem.getDescription());
-        productDTO.setPrice(itemsItem.getPrice() + " " + (isNull(itemsItem.getCurrencyEnum()) ?
-                null : itemsItem.getCurrencyEnum().getCurrency()));
+        productDTO.setPrice(itemsItem.getPrice());
+        productDTO.setCurrency(isNull(itemsItem.getCurrencyEnum()) ?
+                null : itemsItem.getCurrencyEnum().getCurrency());
         return productDTO;
     }
 

@@ -90,13 +90,13 @@ class UI {
 
             productList.append(productItem);
             let btns = document.querySelectorAll(".products__hover-btn");
+            const uiCart = new UICart()
             btns[i].addEventListener("click",() => {
-                this.addToCart(item)
+                uiCart.addToCart(item)
             })
             
         } 
-        let storageCart = CustomStotage.getCart();
-        Cart = storageCart ? storageCart : Cart;
+        
         //console.log(Cart) 
         
         
@@ -114,70 +114,8 @@ class UI {
         location.reload();
     }
 
-    addToCart(product) {
-        let inCart = Cart.find(item => product.id === item.id);
-        if (!inCart) {
-            Cart.push(product);
-            //console.log(Cart)
-            
-            cartList = document.querySelector(".cart__products-list");
-            //console.log(cartList)
-            let cartItem = document.createElement("div");
-            cartItem.classList.add("cart__products-item");
-            cartItem.innerHTML = `<div class="cart__item-img">
-                                        <img src="./images/products/${product.image}" alt=""  width="105" height="105">
-                                    </div>
-                                    <div class="cart__item-text">
-                                        <h3 class="cart__item-title">${product.title}</h3>
-                                        <div class="cart__item-price-block">
-                                            <p class="cart__item-count">1</p>
-                                            <p class="cart__item-mul">X</p>
-                                            <p class="cart__item-price">${product.price}</p>
-                                        </div>
-                                    </div>
-                                    <button class="cart__item-close">
-                                        <img src="../images/cart/item-close-image.svg" alt="">
-                                    </button>`
-            cartList.append(cartItem);
-            CustomStotage.saveCart(Cart);       
-        }
-    }
+   
     
-    removeFromCart(Cart) {
-        console.log(Cart);
-        if(Cart.length > 0) {
-            let cartItems = document.querySelectorAll(".cart__products-item");
-            cartItems = Array.from(cartItems) ;
-            console.log(cartItems);
-            let closeBtns = document.querySelectorAll(".cart__item-close");
-
-            closeBtns = Array.from(closeBtns);
-            //console.log(closeBtns);
-            for(let i = 0; i < Cart.length; i++) {
-                //console.log(Cart[i])
-                closeBtns[i].addEventListener("click", () => {
-
-                    // console.log("click: delete " + Cart[i].id);
-                    cartItems[i].innerHTML = "";
-                    let d = Cart.splice(1, i);
-                    console.log("Delete...")
-                    console.log(Cart)
-                    CustomStotage.saveCart(Cart)
-                })
-                
-            }
-        }
-        // let arr = [1, 2, 3, 4];
-        // console.log(arr)
-        // // arr.splice(1, 1)
-        // // console.log(arr)
-
-        // for (let i = 0; i < arr.length; i++) {
-        //     console.log(arr[i]);
-
-        // }
-        
-    }
 
 
 
@@ -306,7 +244,102 @@ class UI {
         let storageSort = CustomStotage.getSortBy();
         sort.value = storageSort ? storageSort : sortValue;
     }
+
+
+
+
+    randomMethod() {
+        console.log("check")
+    }
+
 }
+
+
+class UICart extends UI {
+    addToCart(product) {
+        let inCart = Cart.find(item => product.id === item.id);
+        if (!inCart) {
+            Cart.push(product);
+            //console.log(Cart)
+            
+            cartList = document.querySelector(".cart__products-list");
+            //console.log(cartList)
+            let cartItem = document.createElement("div");
+            cartItem.classList.add("cart__products-item");
+            cartItem.innerHTML = `<div class="cart__item-img">
+                                        <img src="./images/products/${product.image}" alt=""  width="120%">
+                                    </div>
+                                    <div class="cart__item-text">
+                                        <h3 class="cart__item-title">${product.title}</h3>
+                                        <div class="cart__item-price-block">
+                                            <p class="cart__item-count">1</p>
+                                            <p class="cart__item-mul">X</p>
+                                            <p class="cart__item-price">${product.price}</p>
+                                        </div>
+                                    </div>
+                                    <button class="cart__item-close">
+                                        <img src="../images/cart/item-close-image.svg" alt="" class="close-img" data-id="${product.id}">
+                                    </button>`
+            cartList.append(cartItem);
+            CustomStotage.saveCart(Cart);   
+             
+
+            cartItem.addEventListener('click', (event) => {
+                if (event.target.classList.contains("close-img")) {
+                    let id = event.target.dataset.id
+                    this.removeFromCart(Cart, id)
+                    CustomStotage.saveCart(Cart);   
+                }
+            })
+            let storageCart = CustomStotage.getCart();
+            Cart = storageCart ? storageCart : Cart;   
+        }
+    }
+    
+    removeFromCart(Cart, id) {
+        let item = event.target.parentElement.parentElement; 
+        let targetItem = Cart.find(item => item.id == id)
+        let index = Cart.indexOf(targetItem)
+        Cart.splice(index, 1)
+        cartList.removeChild(item);
+        console.log(Cart)
+       
+
+            
+            // let cartItems = document.querySelectorAll(".cart__products-item");
+            // cartItems = Array.from(cartItems) ;
+            // console.log(cartItems);
+            // let closeBtns = document.querySelectorAll(".cart__item-close");
+
+            // closeBtns = Array.from(closeBtns);
+            // console.log(closeBtns);
+            // for(let i = 0; i < Cart.length; i++) {
+            //     console.log(closeBtns[i])
+            //     closeBtns[i].addEventListener("click", () => {
+
+            //     console.log("click: delete " + Cart[i].id);
+            //         cartItems[i].innerHTML = "";
+            //         let d = Cart.splice(1, i);
+            //         CustomStotage.saveCart(Cart);
+            //         console.log(Cart)
+            //     })
+                
+            // }
+        }
+        // let arr = [1, 2, 3, 4];
+        // console.log(arr)
+        // // arr.splice(1, 1)
+        // // console.log(arr)
+
+        // for (let i = 0; i < arr.length; i++) {
+        //     console.log(arr[i]);
+
+        // }
+        
+}
+
+
+
 
 class CustomStotage {
     static saveProduct(products) {

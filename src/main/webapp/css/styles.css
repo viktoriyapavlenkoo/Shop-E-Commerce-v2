@@ -956,6 +956,7 @@ body {
     top: 0;
     right: 0;
     padding: 30px;
+    /* width: 25vw; */
     color: var(--header-footer-color-text);
     background-color: var(--first-background-color);
     font-weight: 400;
@@ -978,7 +979,6 @@ body {
     content: "";
     top: 62px;
     left: 0;
-    max-width: 287px;
     width: 100%;
     height: 1px;
     background-color: var(--footer-color-text);
@@ -990,7 +990,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 530px;
+    height: 50vh;
     margin-top: 42px;
 }
 .cart__products-list {

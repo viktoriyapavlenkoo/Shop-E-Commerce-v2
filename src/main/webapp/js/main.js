@@ -21,8 +21,8 @@ let buttons = [];
 let cartArray;
 btnCart.addEventListener("click", () => {
     cart.style.display = "block";
-   let uiCart = new UICart();
-   uiCart.getTotalSum()
+    let uiCart = new UICart();
+    uiCart.getTotalSum()
 })
 
 cartClose.addEventListener("click", () => {
@@ -59,7 +59,6 @@ class Product {
 
 class UI {
     displayProduct(products) {
-        console.log(products)
         for (let i = 0; i < products.length; i++) {
             let item = products[i];
             let productItem = document.createElement("div");
@@ -92,7 +91,6 @@ class UI {
           
             const uiCart = new UICart()
             btns[i].addEventListener("click",() => {
-                console.log(item)
                 uiCart.addToCart(item)
             })
             
@@ -234,7 +232,6 @@ class UI {
 
 class UICart extends UI {
     addToCart(product) {
-        console.log(product)
         let inCart = Cart.find(item => product.id === item.id);
         if (!inCart) {
             Cart.push(product);            
@@ -256,6 +253,7 @@ class UICart extends UI {
                                         <img src="../images/cart/item-close-image.svg" alt="" class="close-img" data-id="${product.id}">
                                     </button>`
             cartList.append(cartItem);
+            this.getTotalSum();
             CustomStotage.saveCart(Cart);   
              
 
@@ -263,6 +261,7 @@ class UICart extends UI {
                 if (event.target.classList.contains("close-img")) {
                     let id = event.target.dataset.id
                     this.removeFromCart(Cart, id)
+                    this.getTotalSum();
                     CustomStotage.saveCart(Cart);   
                 }
             })
@@ -283,16 +282,23 @@ class UICart extends UI {
     }
 
     getTotalSum() {
+
         let totalSum = document.querySelector(".total-price__sum");
-        console.log(totalSum);
         let sum = 0;
-        console.log(Cart);
+        let currency;
         if(Cart.length > 0) {
+            currency = Cart[0].currency;
             for(let i = 0; i < Cart.length; i++) {
+
+                sum += +Cart[i].price;
                 
-                console.log(Cart[i].price)
             }
+            sum = sum.toFixed(2);
+            totalSum.innerHTML = `${sum} ${currency}`;
+        } else {
+            totalSum.innerHTML = "";
         }
+        
         
 
 

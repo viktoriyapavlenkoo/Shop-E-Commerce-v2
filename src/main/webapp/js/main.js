@@ -23,6 +23,7 @@ btnCart.addEventListener("click", () => {
     cart.style.display = "block";
     let uiCart = new UICart();
     uiCart.getTotalSum()
+    uiCart.clearCart()
 })
 
 cartClose.addEventListener("click", () => {
@@ -278,7 +279,6 @@ class UICart extends UI {
         let index = Cart.indexOf(targetItem);
         Cart.splice(index, 1);
         cartList.removeChild(item);
-        console.log(Cart)
     }
 
     getTotalSum() {
@@ -298,12 +298,19 @@ class UICart extends UI {
         } else {
             totalSum.innerHTML = "";
         }
-        
-        
-
-
-
-        
+    }
+    clearCart() {
+        let clearBtn = document.querySelector(".btn-clear");
+        console.log(clearBtn);
+        clearBtn.addEventListener("click", () => {
+            if(Cart.length > 0) {
+                console.log("clear cart")
+                Cart = [];
+                cartList.innerHTML = ""; 
+                this.getTotalSum();
+                CustomStotage.saveCart(Cart);
+            }
+        })
     }
 }
 

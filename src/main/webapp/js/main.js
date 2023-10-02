@@ -7,6 +7,14 @@ const btnCart = document.querySelector(".btn__cart");
 const cart = document.querySelector(".cart");
 const cartClose = document.querySelector(".cart__close");
 
+let burgerMenu = document.querySelector(".burger-menu");
+let nav = document.querySelector(".nav");
+let closeMenu = document.querySelector(".close-menu");
+
+console.log(burgerMenu)
+
+
+
 let cartList;
 let countProducts;
 let buttonsBlock;
@@ -16,6 +24,28 @@ let buttonNext;
 
 let Cart = [];
 let buttons = [];
+
+
+burgerMenu.addEventListener('click', () => {
+   // nav.style.display = "flex";
+    nav.classList.toggle('smartfon__nav');
+    nav.style.display = 'flex'
+    closeMenu.style.display = "block"
+})
+
+closeMenu.addEventListener("click", () => {
+    
+    nav.classList.toggle('smartfon__nav');
+   nav.style.display = "none";
+    closeMenu.style.display = "none";
+//     if (document.documentElement.clientWidth > 940) {
+//     nav.style.display = "flex";
+// } else {
+//     nav.style.display = "none";
+// }
+
+})
+
 
 
 let cartArray;

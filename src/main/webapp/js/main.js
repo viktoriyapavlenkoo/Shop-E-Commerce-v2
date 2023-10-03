@@ -8,7 +8,7 @@ const cart = document.querySelector(".cart");
 const cartClose = document.querySelector(".cart__close");
 
 let burgerMenu = document.querySelector(".burger-menu");
-let nav = document.querySelector(".nav");
+let nav = document.querySelector(".smartfon__nav");
 let closeMenu = document.querySelector(".close-menu");
 
 console.log(burgerMenu)
@@ -27,23 +27,13 @@ let buttons = [];
 
 
 burgerMenu.addEventListener('click', () => {
-   // nav.style.display = "flex";
-    nav.classList.toggle('smartfon__nav');
-    nav.style.display = 'flex'
+    nav.style.display = 'flex';    
     closeMenu.style.display = "block"
 })
 
 closeMenu.addEventListener("click", () => {
-    
-    nav.classList.toggle('smartfon__nav');
-   nav.style.display = "none";
+    nav.style.display = "none";
     closeMenu.style.display = "none";
-//     if (document.documentElement.clientWidth > 940) {
-//     nav.style.display = "flex";
-// } else {
-//     nav.style.display = "none";
-// }
-
 })
 
 
@@ -297,7 +287,6 @@ class UICart extends UI {
                 }
             })
 
-            //this.getTotalSum()
             let storageCart = CustomStotage.getCart();
             Cart = storageCart ? storageCart : Cart;   
         }

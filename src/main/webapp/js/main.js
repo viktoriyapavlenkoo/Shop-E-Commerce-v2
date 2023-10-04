@@ -11,7 +11,6 @@ let burgerMenu = document.querySelector(".burger-menu");
 let nav = document.querySelector(".smartfon__nav");
 let closeMenu = document.querySelector(".close-menu");
 
-console.log(burgerMenu)
 
 
 
@@ -20,6 +19,7 @@ let countProducts;
 let buttonsBlock;
 let buttonPrev;
 let buttonNext;
+let smartfonBtnCart;
 
 
 let Cart = [];
@@ -29,12 +29,21 @@ let buttons = [];
 burgerMenu.addEventListener('click', () => {
     nav.style.display = 'flex';    
     closeMenu.style.display = "block"
+    smartfonBtnCart = document.querySelector('.smartfon__btn-cart')
+
+    smartfonBtnCart.addEventListener("click", () => {
+        cart.style.display = "block";
+        let uiCart = new UICart();
+        uiCart.getTotalSum()
+        uiCart.clearCart()
+    })
 })
 
 closeMenu.addEventListener("click", () => {
     nav.style.display = "none";
     closeMenu.style.display = "none";
 })
+
 
 
 
@@ -46,9 +55,13 @@ btnCart.addEventListener("click", () => {
     uiCart.clearCart()
 })
 
+
+
 cartClose.addEventListener("click", () => {
     cart.style.display = "none";
 })
+
+
 
 
 class Product {
@@ -320,10 +333,9 @@ class UICart extends UI {
     }
     clearCart() {
         let clearBtn = document.querySelector(".btn-clear");
-        console.log(clearBtn);
         clearBtn.addEventListener("click", () => {
             if(Cart.length > 0) {
-                console.log("clear cart")
+
                 Cart = [];
                 cartList.innerHTML = ""; 
                 this.getTotalSum();

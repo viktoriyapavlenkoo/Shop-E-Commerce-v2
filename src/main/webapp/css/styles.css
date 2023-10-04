@@ -105,7 +105,7 @@ body {
 .smartfon__nav .menu .menu__item {
     padding: 0;
     margin: 0;
-    padding: 50px;
+    padding: 40px;
     overflow: hidden;
 }
 
@@ -198,7 +198,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 100vh;
+    height: calc(100vh - 100px);
 }
 
 .hero__content {
@@ -210,6 +210,7 @@ body {
     max-width: 550px;
     width: 100%;
     position: absolute;
+    top: 10vh;
     right: 0;
     padding: 60px 40px 35px;
     background-color: var(--second-background-color);
@@ -647,7 +648,7 @@ body {
    color: var(--footer-color-text);
    border: none;
    height: 54px;
-   margin-left: 17px;
+  
 }
 .show__select,
 .sort__select {
@@ -657,7 +658,7 @@ body {
     color: var(--footer-color-text);
     border: none;
     height: 54px;
-    margin-left: 17px;
+    
     font-size: var(--large-text);
     font-weight: 400;
     background-color: var(--first-background-color);
@@ -667,7 +668,9 @@ body {
     padding: 12px 30px;
 }
 .sort__label {
-    margin-left: 17px;
+    margin-right: 17px;
+    margin-bottom: 5px;
+
 }
 
 .shop-products__buttons-block {
@@ -906,6 +909,9 @@ body {
 }
 
 @media (max-width:550px){
+    html {
+        font-size: 12px;
+    }
     
     .product__list {
         grid-template-columns: repeat(1, 1fr);
@@ -933,4 +939,70 @@ body {
     .hero__title {
         font-size: var(--first-section-title);
     } 
+    .page-hero__path {
+    
+        align-items: center;
+    }
+    .show__form {
+        
+        flex-direction: column;
+        align-items: end;
+    }
+    .sort__select {
+        max-width: 188px;
+        padding: 5px 5px;
+
+    }
+    .sort__label {
+        margin-right: 0;    
+    }
+    .filter__text {
+        display: none;
+    }
+    .shop-products__buttons-block {
+        flex-wrap: wrap;
+        justify-content: start;
+        margin-top: 40px;
+        margin-bottom: 30px;
+    }
+    .shop-products__btn {
+        margin-bottom: 20px;
+    }
+    .hero__btn {
+        padding: 15px 30px;
+    }
+    .hero__text-block {
+        padding: 30px;
+    }
+
+
+    .header__content {
+        height: 70px;
+    }
+
+    .hero__text {
+        margin-bottom: 25px;
+    }
+    .products__title {
+        margin: 40px 0 40px;
+    }
+
+    .products__btn {
+        margin: 40px auto 40px;
+    }
+    .footer {
+        padding: 35px 0 30px;
+    }
+    .footer__text {
+        margin-top: 20px;
+    }
+
+    .smartfon__nav .menu .menu__item {
+
+        padding: 20px;
+    }
+    
+    .shop-products__header-content {
+        margin-bottom: 40px;
+    }
 }

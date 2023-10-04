@@ -16,4 +16,6 @@ public class ProductDTO {
 
     private String price;
 
+    private String currency;
+
 }

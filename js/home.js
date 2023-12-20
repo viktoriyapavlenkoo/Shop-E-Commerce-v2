@@ -1,33 +1,19 @@
 "use strict"
 
-
-
-
-
-
-
-// heroBtn.addEventListener("click", relocation)
-
-// productsBtn.addEventListener("click", relocation)
-
-// function relocation() {
-//     window.location.href = urlShopPage;
-//     console.log(window.location.href)
-// }
-// function redirectToShopPage() {
-//     const heroBtn = document.querySelector(".hero__btn");
-//     const productsBtn = document.querySelector(".products__btn");
-//     heroBtn.addEventListener("click", relocation)
-//     productsBtn.addEventListener("click", relocation)
-// }
-
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
     
-    const products = new Product();
+    const product = new Product();
     const ui = new UI;
+    const uiCart = new UICart();
 
-    products.getProducts().then(prod => ui.displayProduct(prod))
+    let cartArray = CustomStotage.getCart();
+    
+    if (cartArray.length > 0) {
+        cartArray.forEach(element => {
+            uiCart.addToCart(element); 
+        });
+    }
+
+    product.getProducts().then(prod => ui.displayProduct(prod))
+    
 })    

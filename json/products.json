@@ -1,0 +1,258 @@
+[
+    {
+        "id": "1",
+        "imageUrl": "products-img-1.png",
+        "name": "Syltherine",
+        "price": "100",
+        "currency": "USD",
+        "description": "Stylish cafe table"
+    },
+    {
+        "id": "2",
+        "imageUrl": "products-img-2.png",
+        "name": "Leviosa",
+        "price": "90",
+        "currency": "USD",
+        "description": "Stylish cafe chair"
+    },
+    {
+        "id": "3",
+        "imageUrl": "products-img-3.png",
+        "name": "Lolito",
+        "price": "130",
+        "currency": "USD",
+        "description": "Luxury big sofa"
+    },
+    {
+        "id": "4",
+        "imageUrl": "products-img-4.png",
+        "name": "Respira",
+        "price": "250",
+        "currency": "USD",
+        "description": "Outdoor bar table and stool"
+    },
+    {
+        "id": "5",
+        "imageUrl": "products-img-5.png",
+        "name": "Grifo",
+        "price": "90",
+        "currency": "USD",
+        "description": "Night lamp"
+    },
+    {
+        "id": "6",
+        "imageUrl": "products-img-6.png",
+        "name": "Muggo",
+        "price": "200",
+        "currency": "USD",
+        "description": "Small mug"
+    },
+    {
+        "id": "7",
+        "imageUrl": "products-img-7.png",
+        "name": "Pingky",
+        "price": "130",
+        "currency": "USD",
+        "description": "Cute bed set"
+    },
+    {
+        "id": "8",
+        "imageUrl": "products-img-8.png",
+        "name": "Potty",
+        "price": "110",
+        "currency": "USD",
+        "description": "Minimalist flower pot"
+    },
+    {
+        "id": "9",
+        "imageUrl": "products-img-1.png",
+        "name": "Syltherine",
+        "price": "100",
+        "currency": "USD",
+        "description": "Stylish cafe table"
+    },
+    {
+        "id": "10",
+        "imageUrl": "products-img-2.png",
+        "name": "Leviosa",
+        "price": "90",
+        "currency": "USD",
+        "description": "Stylish cafe chair"
+    },
+    {
+        "id": "11",
+        "imageUrl": "products-img-3.png",
+        "name": "Lolito",
+        "price": "130",
+        "currency": "USD",
+        "description": "Luxury big sofa"
+    },
+    {
+        "id": "12",
+        "imageUrl": "products-img-4.png",
+        "name": "Respira",
+        "price": "250",
+        "currency": "USD",
+        "description": "Outdoor bar table and stool"
+    },
+    {
+        "id": "13",
+        "imageUrl": "products-img-5.png",
+        "name": "Grifo",
+        "price": "90",
+        "currency": "USD",
+        "description": "Night lamp"
+    },
+    {
+        "id": "14",
+        "imageUrl": "products-img-6.png",
+        "name": "Muggo",
+        "price": "200",
+        "currency": "USD",
+        "description": "Small mug"
+    },
+    {
+        "id": "15",
+        "imageUrl": "products-img-7.png",
+        "name": "Pingky",
+        "price": "130",
+        "currency": "USD",
+        "description": "Cute bed set"
+    },
+    {
+        "id": "16",
+        "imageUrl": "products-img-8.png",
+        "name": "Potty",
+        "price": "110",
+        "currency": "USD",
+        "description": "Minimalist flower pot"
+    },
+    {
+        "id": "17",
+        "imageUrl": "products-img-1.png",
+        "name": "Syltherine",
+        "price": "100",
+        "currency": "USD",
+        "description": "Stylish cafe table"
+    },
+    {
+        "id": "18",
+        "imageUrl": "products-img-2.png",
+        "name": "Leviosa",
+        "price": "90",
+        "currency": "USD",
+        "description": "Stylish cafe chair"
+    },
+    {
+        "id": "19",
+        "imageUrl": "products-img-3.png",
+        "name": "Lolito",
+        "price": "130",
+        "currency": "USD",
+        "description": "Luxury big sofa"
+    },
+    {
+        "id": "20",
+        "imageUrl": "products-img-4.png",
+        "name": "Respira",
+        "price": "250",
+        "currency": "USD",
+        "description": "Outdoor bar table and stool"
+    },
+    {
+        "id": "21",
+        "imageUrl": "products-img-5.png",
+        "name": "Grifo",
+        "price": "90",
+        "currency": "USD",
+        "description": "Night lamp"
+    },
+    {
+        "id": "22",
+        "imageUrl": "products-img-6.png",
+        "name": "Muggo",
+        "price": "200",
+        "currency": "USD",
+        "description": "Small mug"
+    },
+    {
+        "id": "23",
+        "imageUrl": "products-img-7.png",
+        "name": "Pingky",
+        "price": "130",
+        "currency": "USD",
+        "description": "Cute bed set"
+    },
+    {
+        "id": "24",
+        "imageUrl": "products-img-8.png",
+        "name": "Potty",
+        "price": "110",
+        "currency": "USD",
+        "description": "Minimalist flower pot"
+    },
+    {
+        "id": "25",
+        "imageUrl": "products-img-1.png",
+        "name": "Syltherine",
+        "price": "100",
+        "currency": "USD",
+        "description": "Stylish cafe table"
+    },
+    {
+        "id": "26",
+        "imageUrl": "products-img-2.png",
+        "name": "Leviosa",
+        "price": "90",
+        "currency": "USD",
+        "description": "Stylish cafe chair"
+    },
+    {
+        "id": "27",
+        "imageUrl": "products-img-3.png",
+        "name": "Lolito",
+        "price": "130",
+        "currency": "USD",
+        "description": "Luxury big sofa"
+    },
+    {
+        "id": "28",
+        "imageUrl": "products-img-4.png",
+        "name": "Respira",
+        "price": "250",
+        "currency": "USD",
+        "description": "Outdoor bar table and stool"
+    },
+    {
+        "id": "29",
+        "imageUrl": "products-img-5.png",
+        "name": "Grifo",
+        "price": "90",
+        "currency": "USD",
+        "description": "Night lamp"
+    },
+    {
+        "id": "30",
+        "imageUrl": "products-img-6.png",
+        "name": "Muggo",
+        "price": "200",
+        "currency": "USD",
+        "description": "Small mug"
+    },
+    {
+        "id": "31",
+        "imageUrl": "products-img-7.png",
+        "name": "Pingky",
+        "price": "130",
+        "currency": "USD",
+        "description": "Cute bed set"
+    },
+    {
+        "id": "32",
+        "imageUrl": "products-img-8.png",
+        "name": "Potty",
+        "price": "110",
+        "currency": "USD",
+        "description": "Minimalist flower pot"
+    }
+]

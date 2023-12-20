@@ -23,7 +23,7 @@
                     <nav class="nav">
                         <ul class="menu">
                             <li class="menu__item"><a href="/" class="menu__link">Home</a></li>
-                            <li class="menu__item"><a href="/shop" class="menu__link">Shop</a></li>
+                            <li class="menu__item"><a href="shop.html" class="menu__link">Shop</a></li>
                             <li class="menu__item"><a href="#" class="menu__link">About</a></li>
                             <li class="menu__item"><a href="#" class="menu__link">Contact</a></li>
                         </ul>
@@ -87,11 +87,11 @@
                                 </select> -->
                                 <label for="sort" class="sort__label">Sort by</label>
                                 <select name="sort" id="sort" class="sort__select">
-                                    <option value="default"  class="sort__option">default</option>
-                                    <option value="name A-Z" class="sort__option">name A-Z</option>
-                                    <option value="name Z-A" class="sort__option">name Z-A</option>
-                                    <option value="price ASC" class="sort__option">price ASC</option>
-                                    <option value="price DESC" class="sort__option">price DESC</option>
+                                    <option value="default"  class="sort__option" data-id="0">default</option>
+                                    <option value="name A-Z" class="sort__option" data-id="1">name A-Z</option>
+                                    <option value="name Z-A" class="sort__option" data-id="2">name Z-A</option>
+                                    <option value="price ASC" class="sort__option" data-id="3">price ASC</option>
+                                    <option value="price DESC" class="sort__option" data-id="4">price DESC</option>
                                 </select>
                             </form>
                         </div>
@@ -100,12 +100,12 @@
                 <div class="shop-products__content">
                     <div class="container">
                         <div class="product__list"></div>
-                        <div class="shop-products__buttons-block">
+                        
                             <!-- <button class="shop-products__btn shop-products__btn_active">1</button>
                             <button class="shop-products__btn">2</button>
                             <button class="shop-products__btn">3</button>
                             <button class="shop-products__btn shop-products__btn-next">Next</button> -->
-                        </div>
+            
                     </div>     
                 </div>
             </section>
@@ -200,50 +200,18 @@
             </button>
         </div>
         <div class="cart__body">
-            <ul class="cart__products-list">
-                <li class="cart__products-item">
-                    <div class="cart__item-img">
-                        <img src="../images/cart/cart-products-image-1.png" alt="">
-                    </div>
-                    <div class="cart__item-text">
-                        <h3 class="cart__item-title">Asgaard sofa</h3>
-                        <div class="cart__item-price-block">
-                            <p class="cart__item-count">1</p>
-                            <p class="cart__item-mul">X</p>
-                            <p class="cart__item-price">Rs. 250,000.00</p>
-                        </div>
-                    </div>
-                    <button class="cart__item-close">
-                        <img src="../images/cart/item-close-image.svg" alt="">
-                    </button>
-                </li>
-                <li class="cart__products-item">
-                    <div class="cart__item-img">
-                        <img src="../images/cart/cart-products-image-2.png" alt="">
-                    </div>
-                    <div class="cart__item-text">
-                        <h3 class="cart__item-title">Casaliving Wood</h3>
-                        <div class="cart__item-price-block">
-                            <p class="cart__item-count">1</p>
-                            <p class="cart__item-mul">X</p>
-                            <p class="cart__item-price">Rs. 270,000.00</p>
-                        </div>
-                    </div>
-                    <button class="cart__item-close">
-                        <img src="../images/cart/item-close-image.svg" alt="">
-                    </button>
-                </li>
-            </ul>
+            <div class="cart__products-list">
+                
+            </div>
             <div class="cart__total-price">
                 <h3 class="total-price__title">Subtotal</h3>
-                <p class="total-price__sum">Rs. 520,000.00</p>
+                <p class="total-price__sum"></p>
             </div>
         </div>
         <div class="cart__footer">
             <div class="cart__buttons">
                 <button class="btn cart__btn btn-cart">Cart</button>
-                <button class="btn cart__btn btn-checkout">Checkout</button>
-                <button class="btn cart__btn btn-comparison">Comparison</button>
+                <button class="btn cart__btn btn-clear">Clear cart</button>
             </div>
         </div>
     </div>

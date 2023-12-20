@@ -5,15 +5,41 @@ const btnCart = document.querySelector(".btn__cart");
 const cart = document.querySelector(".cart");
 const cartClose = document.querySelector(".cart__close");
 
+let burgerMenu = document.querySelector(".burger-menu");
+let nav = document.querySelector(".smartfon__nav");
+let closeMenu = document.querySelector(".close-menu");
+
 let cartList;
 let countProducts;
 let buttonsBlock;
 let buttonPrev;
 let buttonNext;
+let smartfonBtnCart;
 
 
 let Cart = [];
 let buttons = [];
+
+
+
+burgerMenu.addEventListener('click', () => {
+    nav.style.display = 'flex';    
+    closeMenu.style.display = "block"
+    smartfonBtnCart = document.querySelector('.smartfon__btn-cart')
+
+    smartfonBtnCart.addEventListener("click", () => {
+        cart.style.display = "block";
+        let uiCart = new UICart();
+        uiCart.getTotalSum()
+        uiCart.clearCart()
+    })
+})
+
+closeMenu.addEventListener("click", () => {
+    nav.style.display = "none";
+    closeMenu.style.display = "none";
+})
+
 
 
 let cartArray;

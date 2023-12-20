@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Furniro</title>
-    <!--<link type="image/x-icon" href="./image/logo-img.svg" rel="shortcut icon">-->
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +22,7 @@
                     <nav class="nav">
                         <ul class="menu">
                             <li class="menu__item"><a href="/" class="menu__link">Home</a></li>
-                            <li class="menu__item"><a href="shop.html" class="menu__link">Shop</a></li>
+                            <li class="menu__item"><a href="shop.html"menu__link">Shop</a></li>
                             <li class="menu__item"><a href="#" class="menu__link">About</a></li>
                             <li class="menu__item"><a href="#" class="menu__link">Contact</a></li>
                         </ul>
@@ -50,6 +49,44 @@
                             </ul>
                         </ul>
                     </nav>
+                    <div class="burger-menu">
+                        <span></span>
+                    </div>
+                    <nav class="smartfon__nav">
+                        <ul class="menu">
+                            <li class="menu__item"><a href="/" class="menu__link">Home</a></li>
+                            <li class="menu__item"><a href="/shop" class="menu__link">Shop</a></li>
+                            <li class="menu__item"><a href="#" class="menu__link">About</a></li>
+                            <li class="menu__item"><a href="#" class="menu__link">Contact</a></li>
+                        </ul>
+                        <ul class="btn__list">
+                            <ul class="btn__item">
+                                <button class="btn btn__account">
+                                    <img src="./images/account-icon.svg" alt="Account icon">
+                                </button>
+                            </ul>
+                            <ul class="btn__item">
+                                <button class="btn btn__search">
+                                    <img src="./images/search-icon.svg" alt="Search icon" >
+                                </button>
+                            </ul>
+                            <ul class="btn__item">
+                                <button class="btn btn__heart">
+                                    <img src="./images/heart-icon.svg" alt="Heart icon">
+                                </button>
+                            </ul>
+                            <ul class="btn__item">
+                                <button class="btn btn__cart smartfon__btn-cart">
+                                    <img src="./images/cart-icon.svg" alt="Cart icon">
+                                </button>
+                            </ul>
+                        </ul>
+                    </nav>
+                    <div class="close-menu">
+                        <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.6667 1.88L16.7867 0L9.33333 7.45334L1.88 0L0 1.88L7.45334 9.33333L0 16.7867L1.88 18.6667L9.33333 11.2133L16.7867 18.6667L18.6667 16.7867L11.2133 9.33333L18.6667 1.88Z" fill="#212121"></path>
+                        </svg>
+                    </div>
                 </div>
             </div>
         </header>
@@ -99,7 +136,7 @@
                     <div class="products__content">
                         <h2 class="title section__title products__title">Our Products</h2>
                         <div class="product__list"></div>
-                        <a href="shop.html" class="btn products__btn">Show More</a>
+                        <a href="/shop" class="btn products__btn">Show More</a>
                     </div>
                 </div>
             </section>
@@ -137,6 +174,43 @@
                                 <button type="submit" class="btn footer__btn">Subscribe</button>
                             </form> 
                         </div>
+                    </div>
+                    <p class="text footer__text">2023 furino. All rights reverved</p>
+                </div>
+                <div class="smartfon__footer-content">
+                    <div class="footer__blocks">
+                        <div class="footer__block footer__first-block">
+                            <a href="/" class="logo footer__logo">Funiro.</a>
+                            <address class="address">400 University Drive Suite 200 Coral Gables, FL 33134 USA</address>
+                        </div>
+                        <div class="footer__link-helps-new-block">
+                            <div class="footer__block footer__second-block">
+                                <h3 class="footer__title">Links</h3>
+                                <ul class="menu footer__menu">
+                                    <li class="menu__item"><a href="/" class="menu__link">Home</a></li>
+                                    <li class="menu__item"><a href="/shop" class="menu__link">Shop</a></li>
+                                    <li class="menu__item"><a href="#" class="menu__link">About</a></li>
+                                    <li class="menu__item"><a href="#" class="menu__link">Contact</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer__block footer__third-block">
+                                <h3 class="footer__title">Help</h3>
+                                <ul class="help footer__help">
+                                    <li class="help__item"><a href="" class="help__link">Payment Options</a></li>
+                                    <li class="help__item"><a href="" class="help__link">Returns</a></li>
+                                    <li class="help__item"><a href="" class="help__link">Privacy Policies</a></li>
+                                </ul>
+                            </div>
+                        
+                            <div class="footer__block footer__forth-block">
+                                <h3 class="footer__title">Newsletter</h3>
+                                <form action="" method="post" class="form footer__form">
+                                    <input type="email" name="email" placeholder="Enter Your Email Address" class="input footer__input">
+                                    <button type="submit" class="btn footer__btn">Subscribe</button>
+                                </form> 
+                            </div>
+                        </div>
+                        
                     </div>
                     <p class="text footer__text">2023 furino. All rights reverved</p>
                 </div>

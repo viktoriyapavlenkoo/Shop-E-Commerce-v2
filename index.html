@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Furniro</title>
-    <!--<link type="image/x-icon" href="./image/logo-img.svg" rel="shortcut icon">-->
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +22,7 @@
                     <nav class="nav">
                         <ul class="menu">
                             <li class="menu__item"><a href="/" class="menu__link">Home</a></li>
-                            <li class="menu__item"><a href="/shop" class="menu__link">Shop</a></li>
+                            <li class="menu__item"><a href="shop.html"menu__link">Shop</a></li>
                             <li class="menu__item"><a href="#" class="menu__link">About</a></li>
                             <li class="menu__item"><a href="#" class="menu__link">Contact</a></li>
                         </ul>
@@ -50,6 +49,44 @@
                             </ul>
                         </ul>
                     </nav>
+                    <div class="burger-menu">
+                        <span></span>
+                    </div>
+                    <nav class="smartfon__nav">
+                        <ul class="menu">
+                            <li class="menu__item"><a href="/" class="menu__link">Home</a></li>
+                            <li class="menu__item"><a href="/shop" class="menu__link">Shop</a></li>
+                            <li class="menu__item"><a href="#" class="menu__link">About</a></li>
+                            <li class="menu__item"><a href="#" class="menu__link">Contact</a></li>
+                        </ul>
+                        <ul class="btn__list">
+                            <ul class="btn__item">
+                                <button class="btn btn__account">
+                                    <img src="./images/account-icon.svg" alt="Account icon">
+                                </button>
+                            </ul>
+                            <ul class="btn__item">
+                                <button class="btn btn__search">
+                                    <img src="./images/search-icon.svg" alt="Search icon" >
+                                </button>
+                            </ul>
+                            <ul class="btn__item">
+                                <button class="btn btn__heart">
+                                    <img src="./images/heart-icon.svg" alt="Heart icon">
+                                </button>
+                            </ul>
+                            <ul class="btn__item">
+                                <button class="btn btn__cart smartfon__btn-cart">
+                                    <img src="./images/cart-icon.svg" alt="Cart icon">
+                                </button>
+                            </ul>
+                        </ul>
+                    </nav>
+                    <div class="close-menu">
+                        <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.6667 1.88L16.7867 0L9.33333 7.45334L1.88 0L0 1.88L7.45334 9.33333L0 16.7867L1.88 18.6667L9.33333 11.2133L16.7867 18.6667L18.6667 16.7867L11.2133 9.33333L18.6667 1.88Z" fill="#212121"></path>
+                        </svg>
+                    </div>
                 </div>
             </div>
         </header>
@@ -61,7 +98,7 @@
                             <h3 class="subtitle hero__subtitle">New Arrival</h3>
                             <h1 class="title hero__title">Discover Our New Collection</h1>
                             <p class="text hero__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.</p>
-                            <a href="/shop" class="btn hero__btn">Buy now</a>
+                            <a href="shop.html" class="btn hero__btn">Buy now</a>
                         </div>
                     </div>
                 </div>
@@ -140,6 +177,43 @@
                     </div>
                     <p class="text footer__text">2023 furino. All rights reverved</p>
                 </div>
+                <div class="smartfon__footer-content">
+                    <div class="footer__blocks">
+                        <div class="footer__block footer__first-block">
+                            <a href="/" class="logo footer__logo">Funiro.</a>
+                            <address class="address">400 University Drive Suite 200 Coral Gables, FL 33134 USA</address>
+                        </div>
+                        <div class="footer__link-helps-new-block">
+                            <div class="footer__block footer__second-block">
+                                <h3 class="footer__title">Links</h3>
+                                <ul class="menu footer__menu">
+                                    <li class="menu__item"><a href="/" class="menu__link">Home</a></li>
+                                    <li class="menu__item"><a href="/shop" class="menu__link">Shop</a></li>
+                                    <li class="menu__item"><a href="#" class="menu__link">About</a></li>
+                                    <li class="menu__item"><a href="#" class="menu__link">Contact</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer__block footer__third-block">
+                                <h3 class="footer__title">Help</h3>
+                                <ul class="help footer__help">
+                                    <li class="help__item"><a href="" class="help__link">Payment Options</a></li>
+                                    <li class="help__item"><a href="" class="help__link">Returns</a></li>
+                                    <li class="help__item"><a href="" class="help__link">Privacy Policies</a></li>
+                                </ul>
+                            </div>
+                        
+                            <div class="footer__block footer__forth-block">
+                                <h3 class="footer__title">Newsletter</h3>
+                                <form action="" method="post" class="form footer__form">
+                                    <input type="email" name="email" placeholder="Enter Your Email Address" class="input footer__input">
+                                    <button type="submit" class="btn footer__btn">Subscribe</button>
+                                </form> 
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <p class="text footer__text">2023 furino. All rights reverved</p>
+                </div>
             </div>
         </footer>
     </div>
@@ -151,50 +225,19 @@
             </button>
         </div>
         <div class="cart__body">
-            <ul class="cart__products-list">
-                <li class="cart__products-item">
-                    <div class="cart__item-img">
-                        <img src="../images/cart/cart-products-image-1.png" alt="">
-                    </div>
-                    <div class="cart__item-text">
-                        <h3 class="cart__item-title">Asgaard sofa</h3>
-                        <div class="cart__item-price-block">
-                            <p class="cart__item-count">1</p>
-                            <p class="cart__item-mul">X</p>
-                            <p class="cart__item-price">Rs. 250,000.00</p>
-                        </div>
-                    </div>
-                    <button class="cart__item-close">
-                        <img src="../images/cart/item-close-image.svg" alt="">
-                    </button>
-                </li>
-                <li class="cart__products-item">
-                    <div class="cart__item-img">
-                        <img src="../images/cart/cart-products-image-2.png" alt="">
-                    </div>
-                    <div class="cart__item-text">
-                        <h3 class="cart__item-title">Casaliving Wood</h3>
-                        <div class="cart__item-price-block">
-                            <p class="cart__item-count">1</p>
-                            <p class="cart__item-mul">X</p>
-                            <p class="cart__item-price">Rs. 270,000.00</p>
-                        </div>
-                    </div>
-                    <button class="cart__item-close">
-                        <img src="../images/cart/item-close-image.svg" alt="">
-                    </button>
-                </li>
-            </ul>
+            <div class="cart__products-list">
+                
+            </div>
             <div class="cart__total-price">
                 <h3 class="total-price__title">Subtotal</h3>
-                <p class="total-price__sum">Rs. 520,000.00</p>
+                <p class="total-price__sum"></p>
             </div>
         </div>
         <div class="cart__footer">
             <div class="cart__buttons">
                 <button class="btn cart__btn btn-cart">Cart</button>
-                <button class="btn cart__btn btn-checkout">Checkout</button>
-                <button class="btn cart__btn btn-comparison">Comparison</button>
+                
+                <button class="btn cart__btn btn-clear">Clear cart</button>
             </div>
         </div>
     </div>

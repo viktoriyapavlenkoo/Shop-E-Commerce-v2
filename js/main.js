@@ -271,7 +271,7 @@ class UICart extends UI {
                                         </div>
                                     </div>
                                     <button class="cart__item-close">
-                                        <img src="../images/cart/item-close-image.svg" alt="" class="close-img" data-id="${product.id}">
+                                        <img src="images/cart/item-close-image.svg" alt="" class="close-img" data-id="${product.id}">
                                     </button>`
             cartList.append(cartItem);
             this.getTotalSum();
